@@ -23,7 +23,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <!--comments: To link to javascript files-->
-<script language="JavaScript" src="js/deshbank.js"></script>
+<script language="JavaScript" src="./js/deshbank.js"></script>
 
 </head>
 
@@ -45,8 +45,8 @@
 		<!-- Old Password -->
 		<tr>
 			<td>Old Password</td>
-			<td><input type="password" name="oldpassword" maxlength="25">
-			<label id="message20"></label>	
+			<td><input type="password" name="oldpassword" maxlength="25" onblur="validateoldpassword()" onkeyup="validateoldpassword()">
+			<label id="message20" class="error"></label>	
 			</td>
 		</tr>
 
@@ -54,8 +54,8 @@
 
 			<tr>
 			<td>New Password</td>
-			<td><input type="password" name="newpassword" maxlength="25">
-			<label id="message21"></label>	
+			<td><input type="password" name="newpassword" maxlength="25" onblur="validatenewpassword()" onkeyup="validatenewpassword()">
+			<label id="message21" class="error"></label>	
 			</td>
 		</tr>
 
@@ -63,8 +63,8 @@
 
 		<tr>
 			<td>Confirm Password</td>
-			<td><input type="password" name="confirmpassword" maxlength="25">
-			<label id="message22"></label>	
+			<td><input type="password" name="confirmpassword" maxlength="25" onblur="validateconfirmpassword()" onkeyup="validateconfirmpassword()">
+			<label id="message22" class="error"></label>	
 			</td>
 		</tr>
 	

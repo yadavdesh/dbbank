@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <!--comments: To link to javascript files-->
-<script language="JavaScript" src="js/deshbank.js"></script>
+<script language="javascript" src="./js/deshbank.js"></script>
 
 </head>
 
@@ -32,7 +32,7 @@
 
 <table border="0" width="70%" align="center" class="layout1">
 
-	<form name="addcust" method="POST" action="">
+	<form name="addcust" method="POST" action="customerfundinput.php" onsubmit="validateFundTransfer()">
 		<td colspan="2">
 		<table border="0" align="center">
 			
@@ -43,7 +43,9 @@
 				<!--payer account detail-->
 				<tr>
 				<td>Payers account no</td>
-				<td><input type="text" name="payersaccount" value=""></td>
+				<td><input type="text" name="payersaccount" value="" onblur="validatepayersaccountno()" onkeyup="validatepayersaccountno()">
+                   <label id="message10" class="error"></label>
+				</td>
 				</tr>
 
 				<!--payees account detail -->
@@ -51,8 +53,8 @@
 
 				<tr>
 				<td>Payees account no</td>
-				<td><input type="text" name="payeesaccount" value="">
-				<label id="message11"></label>	
+				<td><input type="text" name="payeesaccount" value="" onblur="validatepayeeaccountno()" onkeyup="validatepayeeaccountno()">
+				<label id="message11" class="error"></label>	
 				</td>
 				</tr>
 
@@ -60,8 +62,8 @@
 
 				<tr>
 				<td>Amount</td>
-				<td><input type="text" name="Amount" maxlength="8">
-				<label id="message1"></label>	
+				<td><input type="text" name="amount" maxlength="8" onblur="validateamount()" onkeyup="validateamount()">
+				<label id="message1" class="error"></label>	
 				</td>
 				</tr>
 
@@ -69,8 +71,8 @@
 
 				<tr>
 				<td>Description</span></td>
-				<td><input type="text" name="desc" value="">
-				<label id="message17"></label>	
+				<td><input type="text" name="desc" value="" onblur="validatedesc()" onkeyup="validatedesc()">
+				<label id="message17" class="error"></label>	
 				</td>
 				</tr>
 
@@ -79,7 +81,7 @@
 				<input type="hidden" name="formid" value="">
 				<td></td>
 				<td>
-					<input type="submit" name="AccSubmit" value="Submit">
+					<input type="submit" name="AccSubmit" value="Submit" onclick="return validateFundTransfer()">
 	                <input type="reset" name="Reset" value="Reset">	
 				</td>
 				</tr>
